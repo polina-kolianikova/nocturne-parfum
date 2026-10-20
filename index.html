@@ -1,29 +1,265 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111214"><meta name="description" content="NOCTURNE. An exploration of light, memory and scent. Compose a personal fragrance selection."><title>NOCTURNE · The hours unseen</title><link rel="stylesheet" href="./styles.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111214'/%3E%3Cpath d='M21 47V17l22 30V17' stroke='%23ccc' fill='none' stroke-width='2'/%3E%3C/svg%3E"><script type="module" src="./app.js"></script></head>
-<body>
-  <a class="skip" href="#atelier">Skip to the scent atelier</a>
-  <header><a class="brand" href="#top">N<span>°</span></a><span class="header-centre">NOCTURNE / EXTRAIT DE PARFUM</span><a class="atelier-link" href="#atelier">THE SCENT ATELIER <span>↗</span></a></header>
-  <main>
-    <section class="story" id="top" aria-label="A fragrance revealed">
-      <div class="stage" aria-hidden="true"><div class="light-slit"></div><div class="light-floor"></div><div class="stage-title">NOCTURNE</div><canvas id="nocturne-canvas"></canvas><div class="stage-veil"></div><div class="fallback-object"><i></i><span>N°<small>NOCTURNE<br>EXTRAIT</small></span></div><span class="left-coordinate">48° 51′ N / 02° 21′ E</span><span class="right-coordinate">AN EXPLORATION OF THE INVISIBLE</span><div class="story-footer"><span id="chapter-number">I / IV</span><i><b id="progress-line"></b></i><span>SCROLL TO REVEAL</span></div></div>
-      <div class="chapters">
-        <article class="chapter introduction"><p class="chapter-kicker">THE HOURS UNSEEN / COLLECTION 01</p><h1>Some things<br>are felt <em>first.</em></h1><p class="intro-description">A trace of light.<br>A shape in the dark.<br>Something that stays.</p><a class="descend" href="#form" aria-label="Reveal the fragrance"><span>REVEAL</span><b>↓</b></a></article>
-        <article class="chapter form" id="form"><p class="chapter-kicker">I / AN INVISIBLE ARCHITECTURE</p><h2>A thousand facets.<br><em>One impression.</em></h2><div class="side-description"><span>01</span><p>Light gives the bottle its form.<br>Memory gives the fragrance its meaning.</p></div><span class="chapter-corner">EXTRAIT DE PARFUM<br>A STUDY IN CONTRAST.</span></article>
-        <article class="chapter notes" id="notes"><p class="chapter-kicker">II / NOTHING IS EVER ONLY ONE THING</p><h2>Open.<br><em>Unfold. Remain.</em></h2><div class="note-explorer" role="group" aria-label="Explore the fragrance stages"><button data-note="opening" class="selected" aria-pressed="true"><span>01 / OPENING</span><b>A flash of light</b><small>Bergamot. Black pepper.</small></button><button data-note="heart" aria-pressed="false"><span>02 / HEART</span><b>The quiet centre</b><small>Iris. Incense.</small></button><button data-note="base" aria-pressed="false"><span>03 / TRACE</span><b>What remains</b><small>Vetiver. Sandalwood.</small></button></div><p class="note-status" id="note-status" role="status">Opening / a crisp, luminous first impression.</p></article>
-        <article class="chapter signature"><p class="chapter-kicker">III / A COMPOSITION OF YOUR OWN</p><h2>The last note<br>is <em>always you.</em></h2><a class="signature-link" href="#atelier">ENTER THE SCENT ATELIER <span>↗</span></a><span class="signature-footnote">A FRAGRANCE IS A POINT OF VIEW.</span></article>
-      </div>
-    </section>
-    <section class="interlude"><span>THE NOCTURNE PHILOSOPHY</span><p>Between presence<br>and <em>absence.</em></p><div><p>We are drawn to the things that do not<br>announce themselves. A passing shadow.<br>The second before a word.</p><p>Fragrance lives there.</p></div></section>
-    <section class="atelier" id="atelier" aria-labelledby="atelier-title"><div class="atelier-heading"><span class="eyebrow">PRIVATE STUDY / 001</span><h2 id="atelier-title">Follow a feeling.</h2><p>Choose one note from each layer.<br>Discover the shape of your own nocturne.</p></div>
-      <form id="scent-form">
-        <div class="note-columns"><fieldset><legend><span>I</span> THE OPENING<small>The first impression.</small></legend><label><input name="opening" type="radio" value="Bergamot" checked><span><i>01</i>Bergamot<small>Bright / citrus</small></span></label><label><input name="opening" type="radio" value="Black pepper"><span><i>02</i>Black pepper<small>Dry / electric</small></span></label><label><input name="opening" type="radio" value="Cardamom"><span><i>03</i>Cardamom<small>Cool / aromatic</small></span></label></fieldset>
-        <fieldset><legend><span>II</span> THE HEART<small>The unfolding.</small></legend><label><input name="heart" type="radio" value="Iris" checked><span><i>01</i>Iris<small>Powdered / intimate</small></span></label><label><input name="heart" type="radio" value="Rose"><span><i>02</i>Rose<small>Dark / petalled</small></span></label><label><input name="heart" type="radio" value="Incense"><span><i>03</i>Incense<small>Mineral / smoky</small></span></label></fieldset>
-        <fieldset><legend><span>III</span> THE TRACE<small>The part that stays.</small></legend><label><input name="base" type="radio" value="Vetiver" checked><span><i>01</i>Vetiver<small>Earth / dry woods</small></span></label><label><input name="base" type="radio" value="Sandalwood"><span><i>02</i>Sandalwood<small>Creamy / quiet</small></span></label><label><input name="base" type="radio" value="Amber"><span><i>03</i>Amber<small>Warm / enveloping</small></span></label></fieldset></div>
-        <div class="personal-study"><div class="constellation" aria-hidden="true"><svg viewBox="0 0 320 320"><circle cx="160" cy="160" r="131"/><circle cx="160" cy="160" r="95"/><circle cx="160" cy="160" r="49"/><path d="M160 17V303M17 160H303M59 59L261 261M59 261L261 59"/><polygon id="scent-polygon" points="160,47 247,210 73,210"/><g id="scent-points"><circle cx="160" cy="47" r="4"/><circle cx="247" cy="210" r="4"/><circle cx="73" cy="210" r="4"/></g></svg><span id="constellation-code">N° 001</span></div><div class="selection" aria-live="polite"><span class="eyebrow">YOUR OLFACTIVE PORTRAIT</span><h3 id="selection-name">Luminous silence.</h3><p id="selection-description">Bergamot opens a bright space. Iris softens the edges. Vetiver leaves a dry, grounded trace.</p><div class="selection-notes"><span id="selected-opening">BERGAMOT</span><i>·</i><span id="selected-heart">IRIS</span><i>·</i><span id="selected-base">VETIVER</span></div><div class="sillage"><label for="sillage">THE IMPRESSION <output for="sillage" id="sillage-output">INTIMATE</output></label><input id="sillage" type="range" min="1" max="3" value="1" step="1"><div><span>CLOSE TO SKIN</span><span>A LINGERING TRACE</span></div></div><button id="save-selection" type="button">KEEP YOUR COMPOSITION <span>↓</span></button><p id="save-status" class="save-status" role="status">A personal selection sheet, saved to your device.</p></div></div>
-      </form>
-      <p class="concept-note">An exploration of fragrance preferences. The notes and intensity describe a concept, not a manufactured formula.</p>
-    </section>
-    <footer><a href="#top" class="footer-brand">NOCTURNE<span>↑</span></a><div><span>Independent fragrance concept by Polina Koljanikova.</span><span>Interactive portfolio study / © 2026</span></div></footer>
-  </main>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111214" />
+    <meta
+      name="description"
+      content="NOCTURNE. An exploration of light, memory and scent. Compose a personal fragrance selection."
+    />
+    <title>NOCTURNE · The hours unseen</title>
+    <link
+      rel="stylesheet"
+      href="./styles.css?v=0b5c512c4b73b66519e861c63537510e842bbb8c6993220f6d6eef3b8f6d2369"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111214'/%3E%3Cpath d='M21 47V17l22 30V17' stroke='%23ccc' fill='none' stroke-width='2'/%3E%3C/svg%3E"
+    />
+    <script
+      type="module"
+      src="./app.js?v=918744e4d9d8e2da266fc6dbf0b3493999a142cd102dde1186cbce81767d9f24"
+    ></script>
+  </head>
+  <body>
+    <a class="skip" href="#atelier">Skip to the scent atelier</a>
+    <header>
+      <a class="brand" href="#top">N<span>°</span></a
+      ><span class="header-centre">NOCTURNE / EXTRAIT DE PARFUM</span
+      ><a class="atelier-link" href="#atelier"
+        >THE SCENT ATELIER <span>↗</span></a
+      >
+    </header>
+    <main>
+      <section class="story" id="top" aria-label="A fragrance revealed">
+        <div class="stage" aria-hidden="true">
+          <div class="light-slit"></div>
+          <div class="light-floor"></div>
+          <div class="stage-title">NOCTURNE</div>
+          <canvas id="nocturne-canvas"></canvas>
+          <div class="stage-veil"></div>
+          <div class="fallback-object">
+            <i></i
+            ><span
+              >N°<small>NOCTURNE<br />EXTRAIT</small></span
+            >
+          </div>
+          <span class="left-coordinate">48° 51′ N / 02° 21′ E</span
+          ><span class="right-coordinate">AN EXPLORATION OF THE INVISIBLE</span>
+          <div class="story-footer">
+            <span id="chapter-number">I / IV</span
+            ><i><b id="progress-line"></b></i><span>SCROLL TO REVEAL</span>
+          </div>
+        </div>
+        <div class="chapters">
+          <article class="chapter introduction">
+            <p class="chapter-kicker">THE HOURS UNSEEN / COLLECTION 01</p>
+            <h1>Some things<br />are felt <em>first.</em></h1>
+            <p class="intro-description">
+              A trace of light.<br />A shape in the dark.<br />Something that
+              stays.
+            </p>
+            <a class="descend" href="#form" aria-label="Reveal the fragrance"
+              ><span>REVEAL</span><b>↓</b></a
+            >
+          </article>
+          <article class="chapter form" id="form">
+            <p class="chapter-kicker">I / AN INVISIBLE ARCHITECTURE</p>
+            <h2>A thousand facets.<br /><em>One impression.</em></h2>
+            <div class="side-description">
+              <span>01</span>
+              <p>
+                Light gives the bottle its form.<br />Memory gives the fragrance
+                its meaning.
+              </p>
+            </div>
+            <span class="chapter-corner"
+              >EXTRAIT DE PARFUM<br />A STUDY IN CONTRAST.</span
+            >
+          </article>
+          <article class="chapter notes" id="notes">
+            <p class="chapter-kicker">II / NOTHING IS EVER ONLY ONE THING</p>
+            <h2>Open.<br /><em>Unfold. Remain.</em></h2>
+            <div
+              class="note-explorer"
+              role="group"
+              aria-label="Explore the fragrance stages"
+            >
+              <button data-note="opening" class="selected" aria-pressed="true">
+                <span>01 / OPENING</span><b>A flash of light</b
+                ><small>Bergamot. Black pepper.</small></button
+              ><button data-note="heart" aria-pressed="false">
+                <span>02 / HEART</span><b>The quiet centre</b
+                ><small>Iris. Incense.</small></button
+              ><button data-note="base" aria-pressed="false">
+                <span>03 / TRACE</span><b>What remains</b
+                ><small>Vetiver. Sandalwood.</small>
+              </button>
+            </div>
+            <p class="note-status" id="note-status" role="status">
+              Opening / a crisp, luminous first impression.
+            </p>
+          </article>
+          <article class="chapter signature">
+            <p class="chapter-kicker">III / A COMPOSITION OF YOUR OWN</p>
+            <h2>The last note<br />is <em>always you.</em></h2>
+            <a class="signature-link" href="#atelier"
+              >ENTER THE SCENT ATELIER <span>↗</span></a
+            ><span class="signature-footnote"
+              >A FRAGRANCE IS A POINT OF VIEW.</span
+            >
+          </article>
+        </div>
+      </section>
+      <section class="interlude">
+        <span>THE NOCTURNE PHILOSOPHY</span>
+        <p>Between presence<br />and <em>absence.</em></p>
+        <div>
+          <p>
+            We are drawn to the things that do not<br />announce themselves. A
+            passing shadow.<br />The second before a word.
+          </p>
+          <p>Fragrance lives there.</p>
+        </div>
+      </section>
+      <section class="atelier" id="atelier" aria-labelledby="atelier-title">
+        <div class="atelier-heading">
+          <span class="eyebrow">PRIVATE STUDY / 001</span>
+          <h2 id="atelier-title">Follow a feeling.</h2>
+          <p>
+            Choose one note from each layer.<br />Discover the shape of your own
+            nocturne.
+          </p>
+        </div>
+        <form id="scent-form">
+          <div class="note-columns">
+            <fieldset>
+              <legend>
+                <span>I</span> THE OPENING<small>The first impression.</small>
+              </legend>
+              <label
+                ><input
+                  name="opening"
+                  type="radio"
+                  value="Bergamot"
+                  checked
+                /><span
+                  ><i>01</i>Bergamot<small>Bright / citrus</small></span
+                ></label
+              ><label
+                ><input name="opening" type="radio" value="Black pepper" /><span
+                  ><i>02</i>Black pepper<small>Dry / electric</small></span
+                ></label
+              ><label
+                ><input name="opening" type="radio" value="Cardamom" /><span
+                  ><i>03</i>Cardamom<small>Cool / aromatic</small></span
+                ></label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>
+                <span>II</span> THE HEART<small>The unfolding.</small>
+              </legend>
+              <label
+                ><input name="heart" type="radio" value="Iris" checked /><span
+                  ><i>01</i>Iris<small>Powdered / intimate</small></span
+                ></label
+              ><label
+                ><input name="heart" type="radio" value="Rose" /><span
+                  ><i>02</i>Rose<small>Dark / petalled</small></span
+                ></label
+              ><label
+                ><input name="heart" type="radio" value="Incense" /><span
+                  ><i>03</i>Incense<small>Mineral / smoky</small></span
+                ></label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>
+                <span>III</span> THE TRACE<small>The part that stays.</small>
+              </legend>
+              <label
+                ><input name="base" type="radio" value="Vetiver" checked /><span
+                  ><i>01</i>Vetiver<small>Earth / dry woods</small></span
+                ></label
+              ><label
+                ><input name="base" type="radio" value="Sandalwood" /><span
+                  ><i>02</i>Sandalwood<small>Creamy / quiet</small></span
+                ></label
+              ><label
+                ><input name="base" type="radio" value="Amber" /><span
+                  ><i>03</i>Amber<small>Warm / enveloping</small></span
+                ></label
+              >
+            </fieldset>
+          </div>
+          <div class="personal-study">
+            <div class="constellation" aria-hidden="true">
+              <svg viewBox="0 0 320 320">
+                <circle cx="160" cy="160" r="131" />
+                <circle cx="160" cy="160" r="95" />
+                <circle cx="160" cy="160" r="49" />
+                <path d="M160 17V303M17 160H303M59 59L261 261M59 261L261 59" />
+                <polygon id="scent-polygon" points="160,47 247,210 73,210" />
+                <g id="scent-points">
+                  <circle cx="160" cy="47" r="4" />
+                  <circle cx="247" cy="210" r="4" />
+                  <circle cx="73" cy="210" r="4" />
+                </g></svg
+              ><span id="constellation-code">N° 001</span>
+            </div>
+            <div class="selection" aria-live="polite">
+              <span class="eyebrow">YOUR OLFACTIVE PORTRAIT</span>
+              <h3 id="selection-name">Luminous silence.</h3>
+              <p id="selection-description">
+                Bergamot opens a bright space. Iris softens the edges. Vetiver
+                leaves a dry, grounded trace.
+              </p>
+              <div class="selection-notes">
+                <span id="selected-opening">BERGAMOT</span><i>·</i
+                ><span id="selected-heart">IRIS</span><i>·</i
+                ><span id="selected-base">VETIVER</span>
+              </div>
+              <div class="sillage">
+                <label for="sillage"
+                  >THE IMPRESSION
+                  <output for="sillage" id="sillage-output"
+                    >INTIMATE</output
+                  ></label
+                ><input
+                  id="sillage"
+                  type="range"
+                  min="1"
+                  max="3"
+                  value="1"
+                  step="1"
+                />
+                <div>
+                  <span>CLOSE TO SKIN</span><span>A LINGERING TRACE</span>
+                </div>
+              </div>
+              <button id="save-selection" type="button">
+                KEEP YOUR COMPOSITION <span>↓</span>
+              </button>
+              <p id="save-status" class="save-status" role="status">
+                A personal selection sheet, saved to your device.
+              </p>
+            </div>
+          </div>
+        </form>
+        <p class="concept-note">
+          An exploration of fragrance preferences. The notes and intensity
+          describe a concept, not a manufactured formula.
+        </p>
+      </section>
+      <footer>
+        <a href="#top" class="footer-brand">NOCTURNE<span>↑</span></a>
+        <div>
+          <span>Independent fragrance concept by Polina Koljanikova.</span
+          ><span>Interactive portfolio study / © 2026</span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
