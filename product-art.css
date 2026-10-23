@@ -1,0 +1,18 @@
+.story { overflow:clip; }
+.product-art { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:3; contain:layout style; }
+.image-object { position:absolute; top:0; left:0; margin:0; width:min(40vw,57svh); aspect-ratio:2/3; transform:translate3d(70vw,52svh,0) translate(-50%,-50%); transform-origin:50% 60%; }
+.image-object img { display:block; width:100%; height:100%; object-fit:contain; }
+.story-footer #progress-line { width:100%; transform-origin:left; }
+.stage-veil { display:none; }
+.introduction h1,.chapter.form h2,.chapter.notes h2,.chapter.signature h2 { text-align:left; max-width:53%; margin-left:0; }
+.introduction h1 { font-size:clamp(64px,6.4vw,104px); }
+.chapter.form h2,.chapter.notes h2,.chapter.signature h2 { font-size:clamp(58px,6vw,92px); }
+.note-explorer { z-index:5; }
+@media(max-width:700px) {
+ .image-object { width:min(70vw,39svh); transform:translate3d(55vw,65svh,0) translate(-50%,-50%); }
+ .introduction h1,.chapter.form h2,.chapter.notes h2,.chapter.signature h2 { max-width:100%; text-align:left; }
+ .introduction h1 { font-size:clamp(38px,10.7vw,63px); }
+ .chapter.form h2,.chapter.notes h2,.chapter.signature h2 { font-size:clamp(35px,10.3vw,60px); }
+}
+@media(max-height:500px) and (min-width:701px) { .introduction h1 {font-size:12vh;} .chapter.form h2,.chapter.notes h2,.chapter.signature h2 {font-size:12vh;} }
+@media(max-width:700px) { .left-coordinate,.right-coordinate,.story-footer {display:none;} }
