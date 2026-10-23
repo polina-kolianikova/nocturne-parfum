@@ -1,4 +1,4 @@
-import {createProductStory, mix, pose, smooth} from './product-story.js?v=415f1cf1e54d0d8d36609979c9945057f9a0c0aae5577fb35102793def4ae06c';
+import {createProductStory, mix, pose, smooth} from './product-story.js?v=8ddbbd74b26a50adcaeb17a481ca46ec3e0e417ed71d1da5121cd02bf650d225';
 const form = document.querySelector("#scent-form");
 const openingWords = {
   Bergamot: ["Luminous", "a bright space"],
@@ -110,11 +110,10 @@ updateSelection();
 
 const story=document.querySelector('.story'),stage=document.querySelector('.stage'),bottle=stage.querySelector('.image-object');
 const positions=[[.71,.53,0,1],[.72,.54,-6,1.12],[.73,.43,5,.64],[.70,.54,-3,.94]];
-control=createProductStory({story,stage,progressBar:document.querySelector('#progress-line'),paint({progress,index,fraction,width,height,mobile,landscape,reduced,pointer,slot}){
- const a=positions[Math.min(index,3)],b=positions[Math.min(index+1,3)],base=mobile?Math.min(width*.71,height*.42):Math.min(width*.4,height*.57);
+control=createProductStory({story,stage,progressBar:document.querySelector('#progress-line'),paint({progress,index,fraction,width,height,landscape,reduced,pointer}){
+ const a=positions[Math.min(index,3)],b=positions[Math.min(index+1,3)],base=Math.min(width*.4,height*.57);
  bottle.style.width=`${base}px`;
  let x=mix(a[0],b[0],fraction)*width,y=mix(a[1],b[1],fraction)*height,scale=mix(a[3],b[3],fraction),opacity=1;
- if(mobile){x=width*.54;y=slot.center;scale=Math.min(1,slot.height/(base*1.5*.94));opacity=smooth((slot.height-110)/75);}
  if(landscape){x=width*.76;y=height*.54;scale=.84;}
  pose(bottle,x,y,reduced?0:mix(a[2],b[2],fraction)+pointer*2.5,scale,opacity);
  stage.style.setProperty('--slit',`${2+smooth(progress/.7)*Math.min(280,width*.3)}px`);

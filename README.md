@@ -19,3 +19,7 @@ Transparent responsive WebP replaces the former faceted geometry and canvas labe
 NOCTURNE and the product are concepts. The image was generated with the built-in ChatGPT image tool. It is a photographic visual, not a freely rotatable 3D model or a physical refraction simulation. The atelier records preferences, not a manufactured fragrance formula. Font licenses are in assets/fonts.
 
 Published browser checks use Chromium viewport emulation; physical phone and Safari results are not claimed.
+
+## iPhone Safari composition, October2026
+
+The mobile experience now reserves explicit photographic or live-model frames in normal document flow. It does not move the hero object into arbitrary gaps between text blocks. Header, content, forms and footer share the mobile reading grid; desktop retains its cinematic composition. Exact local static font weights avoid variable-default differences across browser engines. Relevant touch interactions, portrait/landscape transitions and live scene visibility were checked in Playwright WebKit. This is browser emulation, not a physical iPhone test.
